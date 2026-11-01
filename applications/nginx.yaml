@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/Mahdi-Nazari/rke2-gitops.git
     targetRevision: main
-    path: apps/nginx
+    path: workloads/nginx
 
   destination:
     server: https://kubernetes.default.svc
@@ -18,4 +18,3 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
-
