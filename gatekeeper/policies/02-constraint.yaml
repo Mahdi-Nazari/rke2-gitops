@@ -1,0 +1,19 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sAllowedRepos
+metadata:
+  name: company-allowed-image-repositories
+spec:
+  enforcementAction: deny
+
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+
+    excludedNamespaces:
+      - kube-system
+      - gatekeeper-system
+
+  parameters:
+    repos:
+      - "repo.asax.ir/"
